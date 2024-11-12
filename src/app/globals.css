@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #171717;
+  --font-geist-sans: 'Geist Sans', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+  --fonts-ignazio: 'Ignazio', sans-serif;
+  --fonts-opensans: 'Open Sans', sans-serif;
+  --fonts-ignazioText: 'Ignazio Text', sans-serif;
+}
+
+.font-geist-sans {
+  font-family: var(--font-geist-sans);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
+}
+
+.font-ignazio {
+  font-family: var(--fonts-ignazio);
+}
+
+.font-opensans {
+  font-family: var(--fonts-opensans);
+}
+
+.font-ignazioText {
+  font-family: var(--fonts-ignazioText);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  background: url('/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.divider-line {
+  @apply w-[0.5px];
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.noteligible-font {
+  @apply text-[150px] not-italic font-normal leading-[150px] tracking-[3px] bg-clip-text;
+  font-family: Ignazio;
+  /* 100% */
+  background: linear-gradient(90deg, #fff 0%, #211914 119.23%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.connect-wallet-btn {
+  @apply flex h-10 justify-center items-center gap-2.5 px-6 py-0 rounded-[100px] bg-[#0e0c0c] text-white text-center text-sm not-italic font-normal leading-6 tracking-[0.28px] font-ignazioText;
+}
+
+.airdrop-criteria-grid {
+  @apply flex flex-col items-start gap-4 backdrop-blur-[2px] p-10 rounded-3xl;
+  background: rgba(255, 255, 255, 0.06);
+}
