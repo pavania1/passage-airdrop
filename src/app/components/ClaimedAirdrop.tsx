@@ -21,7 +21,7 @@ const ClaimedAirdrop = ({ response, checkAnotherWallet }: AirDropProps) => {
                 <div className="text-[rgba(255,255,255,0.50)] text-2xl not-italic font-light leading-8 tracking-[0.48px] font-opensans whitespace-nowrap">Congratulations, you are eligible for bonus airdrops of </div>
                 <div className="noteligible-font whitespace-nowrap">{response.eligibleAmount} $pasg</div>
             </div>
-            <div onClick={checkAnotherWallet} className="connect-wallet-btn cursor-pointer">check another wallet</div>
+            <div onClick={checkAnotherWallet} className="connect-wallet-btn cursor-pointer w-[200px]">check another wallet</div>
         </div>
     )
 }

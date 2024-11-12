@@ -36,7 +36,8 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading }
                 </p>
             </div>
             <div>
-                <div className={`flex justify-between items-center w-full px-6 py-10 rounded-3xl bg-[#ffffff14] space-x-20  ${showInput ? "border-[0.5px] border-white" : ""}`}>
+                <div className={`flex justify-between items-center w-full px-6 py-10 rounded-3xl bg-[#ffffff14] space-x-20  ${showInput ? "border-[0.5px] border-white" : ""} 
+                ${error.length > 0 ? "border-[0.5px] border-solid border-[#E04240] bg-[#e0424014]" : ""}`}>
                     {showInput ? (
                         <input
                             ref={inputRef}

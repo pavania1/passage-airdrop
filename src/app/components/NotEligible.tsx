@@ -12,7 +12,7 @@ const NotEligible = ({ checkAnotherWallet }: NotEligibleProps) => {
                 <div className="text-[rgba(255,255,255,0.50)] text-2xl not-italic font-light leading-8 tracking-[0.48px] font-opensans">Your wallet isn’t eligible for the airdrop...</div>
                 <div className="noteligible-font">uh, oh...</div>
             </div>
-            <div onClick={checkAnotherWallet} className="connect-wallet-btn">check another wallet</div>
+            <div onClick={checkAnotherWallet} className="connect-wallet-btn w-[200px]">check another wallet</div>
         </div>
     )
 }

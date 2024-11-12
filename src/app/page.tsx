@@ -18,7 +18,7 @@ export default function Home() {
     >
       <div className="p-10 w-full flex flex-col justify-center items-center overflow-x-hidden ">
         <Header />
-        <div className="max-w-[1280px] w-full">
+        <div className="max-w-[1300px] w-full">
           <MainPage />
         </div>
       </div>

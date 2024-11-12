@@ -43,17 +43,24 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  background: url('/background.png');
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* background: url('/background.png'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+.default-background {
+  background-image: url('/background.png');
+}
 
+.airdrop-background {
+  background-image: url('/bg-airdrop.png');
+}
 .divider-line {
   @apply w-[0.5px];
   background: rgba(255, 255, 255, 0.3);
