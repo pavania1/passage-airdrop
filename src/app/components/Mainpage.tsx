@@ -4,6 +4,7 @@ import EligibilityCriteria from "./EligibilityCriteria";
 import NotEligible from "./NotEligible";
 import ClaimedAirdrop from "./ClaimedAirdrop";
 import AirdropCriteriaBreakdown from "./AirdropCriteriaBreakdown";
+import Celebrations from "./Celebrations"; // Import Celebration component
 
 interface DemoResponse {
     message: string;
@@ -35,7 +36,7 @@ const MainPage = () => {
     const checkAirDropAPI = () => {
         setLoading(true);
         const randomNumber = Math.floor(Math.random() * 3);
-        const apiRes = demoApiResponses[2];
+        const apiRes = demoApiResponses[1];
         setTimeout(() => {
             setLoading(false);
             setResponse(apiRes);
@@ -64,25 +65,31 @@ const MainPage = () => {
     return (
         <div className="flex w-full h-[calc(100vh-160px)] justify-center items-center">
             <div className="flex justify-between w-full gap-24">
-                {
-                    response?.message.length === 0 ? <CheckingAirdrops toggleInput={toggleInputFunc} showInput={showInput} checkAirDropAPI={checkAirDropAPI}
+                {response?.message.length === 0 ? (
+                    <CheckingAirdrops
+                        toggleInput={toggleInputFunc}
+                        showInput={showInput}
+                        checkAirDropAPI={checkAirDropAPI}
                         isLoading={isLoading}
-                    /> : null
-                }
+                    />
+                ) : null}
 
-                {
-                    response?.message.length > 0 ? isNotEligible ? <>
-                        <NotEligible checkAnotherWallet={checkAnotherWallet} />
-                        <EligibilityCriteria breakText={false} />
-                    </> : <>
-                        <ClaimedAirdrop response={response} checkAnotherWallet={checkAnotherWallet} />
-                        <AirdropCriteriaBreakdown response={response} />
-                    </> : null
-                }
+                {response?.message.length > 0 ? (
+                    isNotEligible ? (
+                        <>
+                            <NotEligible checkAnotherWallet={checkAnotherWallet} />
+                            <EligibilityCriteria breakText={false} />
+                        </>
+                    ) : (
+                        <>
+                            <ClaimedAirdrop response={response} checkAnotherWallet={checkAnotherWallet} />
+                            <AirdropCriteriaBreakdown response={response} />
+                            <Celebrations trigger={true} /> {/* Trigger Celebration component */}
+                        </>
+                    )
+                ) : null}
 
-                {
-                    response?.message.length === 0 ? <EligibilityCriteria breakText={true} /> : null
-                }
+                {response?.message.length === 0 ? <EligibilityCriteria breakText={true} /> : null}
             </div>
         </div>
     );
