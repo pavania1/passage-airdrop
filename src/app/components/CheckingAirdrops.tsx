@@ -59,7 +59,7 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading }
                     <input
                         ref={inputRef}
                         autoFocus
-                        className="bg-transparent text-white border-none outline-none placeholder-white/50 text-lg "
+                        className="bg-transparent text-white border-none outline-none placeholder-white/50 text-lg w-[50%]"
                         placeholder="Enter address"
                         onChange={handleInputChange}
                     />

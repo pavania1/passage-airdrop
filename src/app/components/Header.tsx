@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className="w-full items-start flex">
             <Image
-                src="/passage-logo.png"
+                src="/passage-logo.svg"
                 width={160}
                 height={82}
                 alt="passage-logo"

@@ -4,7 +4,7 @@ import EligibilityCriteria from "./EligibilityCriteria";
 import NotEligible from "./NotEligible";
 import ClaimedAirdrop from "./ClaimedAirdrop";
 import AirdropCriteriaBreakdown from "./AirdropCriteriaBreakdown";
-import Celebrations from "./Celebrations"; // Import Celebration component
+import Celebrations from "./Celebrations";
 
 interface DemoResponse {
     message: string;
@@ -84,7 +84,7 @@ const MainPage = () => {
                         <>
                             <ClaimedAirdrop response={response} checkAnotherWallet={checkAnotherWallet} />
                             <AirdropCriteriaBreakdown response={response} />
-                            <Celebrations trigger={true} /> {/* Trigger Celebration component */}
+                            <Celebrations trigger={true} />
                         </>
                     )
                 ) : null}
