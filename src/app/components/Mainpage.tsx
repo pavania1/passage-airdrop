@@ -63,7 +63,7 @@ const MainPage = () => {
 
     return (
         <div className="flex w-full h-[calc(100vh-160px)] justify-center items-center">
-            <div className="flex justify-between w-full gap-20">
+            <div className="flex justify-between w-full gap-24">
                 {
                     response?.message.length === 0 ? <CheckingAirdrops toggleInput={toggleInputFunc} showInput={showInput} checkAirDropAPI={checkAirDropAPI}
                         isLoading={isLoading}

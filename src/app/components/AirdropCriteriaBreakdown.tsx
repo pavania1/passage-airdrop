@@ -27,25 +27,25 @@ const AirdropCriteriaBreakdown = ({ response }: AirDropProps) => {
             </div>
             {
                 missedOutTokens > 0 ? <div className="flex flex-row justify-center items-center gap-2 px-10 py-6 rounded-3xl bg-[#0000004d] whitespace-nowrap">
-                    <p className="text-[rgba(255,255,255,0.50)] text-base not-italic font-light leading-6 font-opensans">You have missed out on</p>
+                    <p className="text-[#ffffff80] text-base not-italic font-light leading-6 font-opensans">You have missed out on</p>
                     <p className="text-white text-2xl not-italic font-normal leading-10 tracking-[0.96px] font-ignazio">{missedOutTokens} $PASG</p>
-                    <p className="text-[rgba(255,255,255,0.50)] text-base not-italic font-light leading-6 font-opensans">by not staking all tokens</p>
+                    <p className="text-[#ffffff80] text-base not-italic font-light leading-6 font-opensans">by not staking all tokens</p>
                 </div> : <div className="px-10 py-6 rounded-3xl bg-[#0000004d] whitespace-nowrap w-full">
-                    <p className="text-[rgba(255,255,255,0.50)] text-base not-italic font-light leading-6 font-opensans">Congratulations ! you have staked all your to..... </p>
+                    <p className="text-[#ffffff80] text-base not-italic font-light leading-6 font-opensans">Congratulations ! you have staked all your to..... </p>
                 </div>
             }
 
-            <div className="flex  justify-between w-full gap-10">
+            <div className="grid grid-cols-2 w-full gap-10">
                 <div className="p-10 rounded-3xl bg-[#0000004d] flex flex-col gap-2">
                     <div className="text-white text-[32px] not-italic font-normal leading-10 tracking-[1.28px] font-ignazio">{response.initialAirdrop} $PASG</div>
                     <div className="bg-[#ffffff80] h-[0.25px] self-stretch"></div>
-                    <div className="text-[rgba(255,255,255,0.50)] text-sm not-italic font-light leading-6 font-opensans">Initial airdrop received </div>
+                    <div className="text-[#ffffff80] text-sm not-italic font-light leading-6 font-opensans">Initial airdrop received </div>
 
                 </div>
                 <div className="p-10 rounded-3xl bg-[#0000004d] flex flex-col gap-2">
                     <div className="text-white text-[32px] not-italic font-normal leading-10 tracking-[1.28px] font-ignazio">{response.totalStaked} $PASG</div>
                     <div className="bg-[#ffffff80] h-[0.25px] self-stretch"></div>
-                    <div className="text-[rgba(255,255,255,0.50)] text-sm not-italic font-light leading-6 font-opensans">Total minimum amount stake </div>
+                    <div className="text-[#ffffff80] text-sm not-italic font-light leading-6 font-opensans">Total minimum amount stake </div>
 
                 </div>
             </div>

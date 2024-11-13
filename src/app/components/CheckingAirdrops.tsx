@@ -48,18 +48,18 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading }
                     Check AIRDROPS <br />
                     eligibility here
                 </div>
-                <p className="text-[rgba(255,255,255,0.50)] text-2xl not-italic font-light leading-[normal] font-opensans">
+                <p className="text-[#ffffff80] text-xl not-italic font-light leading-[normal] font-opensans">
                     The airdrop has remained staked continuously since
                 </p>
             </div>
             <div>
-                <div className={`flex justify-between items-center w-full px-6 py-10 rounded-3xl bg-[#ffffff14] space-x-20  ${showInput ? "border-[0.5px] border-white" : ""} 
+                <div className={`flex justify-between items-center w-full px-6 py-6 rounded-3xl bg-[#ffffff14]  ${showInput ? "border-[0.5px] border-white" : ""} 
                 ${error.length > 0 ? "border-[0.5px] border-solid border-[#E04240] bg-[#e0424014]" : ""}`}>
 
                     <input
                         ref={inputRef}
                         autoFocus
-                        className="bg-transparent text-white border-none outline-none placeholder-white/50 text-lg w-[40%]"
+                        className="bg-transparent text-white border-none outline-none placeholder-white/50 text-lg "
                         placeholder="Enter address"
                         onChange={handleInputChange}
                     />

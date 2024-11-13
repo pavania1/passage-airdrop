@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 interface EligibilityCriteriaProps {
-    breakText: boolean; 
+    breakText: boolean;
 }
 
 const EligibilityCriteria = ({ breakText }: EligibilityCriteriaProps) => {
@@ -19,7 +19,7 @@ const EligibilityCriteria = ({ breakText }: EligibilityCriteriaProps) => {
                         alt="staking-icon"
                     />
                     <div className="text-white text-2xl not-italic font-normal leading-6 tracking-[0.48px] font-ignazio">Staking</div>
-                    <div className="text-white text-[rgba(255,255,255,0.50)] text-base not-italic font-light leading-[normal] font-opensans">
+                    <div className="text-[rgba(255,255,255,0.50)] text-base not-italic font-light leading-[normal] font-opensans">
                         The airdrop has remained staked 100% staked of their
                         {breakText && <br />} initial airdrop
                     </div>
@@ -32,8 +32,8 @@ const EligibilityCriteria = ({ breakText }: EligibilityCriteriaProps) => {
                         alt="timeline-icon"
                     />
                     <div className="text-white text-2xl not-italic font-normal leading-6 tracking-[0.48px] font-ignazio">TimeLine</div>
-                    <div className="text-white text-[rgba(255,255,255,0.50)] text-base not-italic font-light leading-[normal] font-opensans">
-                        The airdrop has remained staked continuously since 
+                    <div className="text-[#ffffff80] text-base not-italic font-light leading-[normal] font-opensans">
+                        The airdrop has remained staked continuously since
                         {breakText && <br />} December 29, 2023.
                     </div>
                 </div>
