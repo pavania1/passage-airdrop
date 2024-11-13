@@ -1,5 +1,5 @@
 "use clinet";
-import type  Metadata from "next";
+import { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -38,6 +38,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> */}
+        <link rel="icon" href="src/app/favicon.ico" />
+
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${ignazio.variable} ${opensSans.variable} antialiased`}
       >

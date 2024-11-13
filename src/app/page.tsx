@@ -14,7 +14,8 @@ export default function Home() {
     <ChainProvider
       chains={chains}
       assetLists={assets}
-      wallets={[keplrwallet[0], leapwallet[0]]}
+      wallets={[keplrwallet[0], leapwallet[0]
+      ]}
     >
       <div className="p-10 w-full flex flex-col justify-center items-center overflow-x-hidden ">
         <Header />
