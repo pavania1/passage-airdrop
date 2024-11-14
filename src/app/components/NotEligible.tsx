@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 interface NotEligibleProps {
     checkAnotherWallet: () => void;
+    address: string;
 }
 
-const NotEligible = ({ checkAnotherWallet }: NotEligibleProps) => {
+const NotEligible = ({ checkAnotherWallet, address }: NotEligibleProps) => {
     const [isTyping, setIsTyping] = useState(false);
 
     useEffect(() => {
@@ -14,7 +15,7 @@ const NotEligible = ({ checkAnotherWallet }: NotEligibleProps) => {
     return (
         <div className="flex flex-col gap-10">
             <div className="flex h-10 items-center gap-4 px-6 py-0 rounded-[100px] bg-[#ffffff14] text-white text-center text-base not-italic font-light leading-6 tracking-[0.32px] font-opensans w-[420px]">
-                pasg1y0hvu8ts6m8hzwp57t9rhdgvnpc7yltguyufwf
+                {address}
             </div>
             <div className="flex flex-col">
                 <div className="text-[rgba(255,255,255,0.50)] text-2xl not-italic font-light leading-8 tracking-[0.48px] font-opensans">

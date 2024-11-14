@@ -7,10 +7,11 @@ interface CheckAirDropComponentProps {
     showInput: boolean;
     isLoading: boolean;
     checkAirDropAPI: () => void;
+    setWalletAddress: (val:string) => void;
 }
 
 const CHAIN_ID = "passage";
-const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading }: CheckAirDropComponentProps) => {
+const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading , setWalletAddress}: CheckAirDropComponentProps) => {
     const { connect } = useChain(CHAIN_ID);
     const inputRef = useRef<HTMLInputElement>(null);
     const [error, setError] = useState("");
@@ -21,6 +22,7 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading }
         const val = event.target.value;
         setAddress(val);
         setError("");
+        setWalletAddress(val);
     };
 
     const handleCheckEligibility = () => {
@@ -62,6 +64,7 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading }
                         className="bg-transparent text-white border-none outline-none placeholder-white/50 text-lg w-[50%]"
                         placeholder="Enter address"
                         onChange={handleInputChange}
+                        
                     />
 
                     <div className="flex gap-6 items-center">

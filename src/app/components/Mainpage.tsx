@@ -11,6 +11,7 @@ interface DemoResponse {
     eligibleAmount: number;
     initialAirdrop: number;
     totalStaked: number;
+
 }
 
 const demoApiResponses = [
@@ -24,6 +25,7 @@ const MainPage = () => {
     const [isNotEligible, setIsNotEligible] = useState(false);
     const [response, setResponse] = useState<DemoResponse>({ message: "", eligibleAmount: 0, initialAirdrop: 0, totalStaked: 0 });
     const [isLoading, setLoading] = useState(false);
+    const [address, setAddress] = useState("");
 
     const toggleInputFunc = () => {
         toggleInput(!showInput);
@@ -71,18 +73,21 @@ const MainPage = () => {
                         showInput={showInput}
                         checkAirDropAPI={checkAirDropAPI}
                         isLoading={isLoading}
+                        setWalletAddress={(val: string) => {
+                            setAddress(val)
+                        }}
                     />
                 ) : null}
 
                 {response?.message.length > 0 ? (
                     isNotEligible ? (
                         <>
-                            <NotEligible checkAnotherWallet={checkAnotherWallet} />
+                            <NotEligible checkAnotherWallet={checkAnotherWallet} address={address} />
                             <EligibilityCriteria breakText={false} />
                         </>
                     ) : (
                         <>
-                            <ClaimedAirdrop response={response} checkAnotherWallet={checkAnotherWallet} />
+                            <ClaimedAirdrop response={response} address={address} checkAnotherWallet={checkAnotherWallet} />
                             <AirdropCriteriaBreakdown response={response} />
                             <Celebrations trigger={true} />
                         </>
