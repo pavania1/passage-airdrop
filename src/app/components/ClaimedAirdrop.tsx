@@ -15,7 +15,7 @@ interface AirDropProps {
 const ClaimedAirdrop = ({ response, checkAnotherWallet, address }: AirDropProps) => {
     return (
         <div className="flex flex-col gap-10">
-            <div className="flex h-10 items-center gap-4 px-6 py-0 rounded-[100px] bg-[#ffffff14] text-white text-center text-base not-italic font-light leading-6 tracking-[0.32px] font-opensans w-[420px]">
+            <div className="flex h-10 items-center gap-4 px-6 py-0 rounded-[100px] bg-[#ffffff14] text-white text-center text-base not-italic font-light leading-6 tracking-[0.32px] font-opensans w-[450px]">
                 {address}
             </div>
             <div className="flex flex-col">

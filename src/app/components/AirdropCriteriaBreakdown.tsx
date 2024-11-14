@@ -38,13 +38,13 @@ const AirdropCriteriaBreakdown = ({ response }: AirDropProps) => {
             <div className="flex w-full gap-4">
                 <div className="py-6 px-10 rounded-3xl bg-[#0000004d] flex flex-col gap-2 w-[50%]">
                     <div className="text-white text-[32px] not-italic font-normal leading-10 tracking-[1.28px] font-ignazio">{response.initialAirdrop} $PASG</div>
-                    <div className="bg-[#ffffff80] h-[0.25px] self-stretch"></div>
+                    <div className="bg-[#ffffff50] h-[0.25px] self-stretch"></div>
                     <div className="text-[#ffffff80] text-sm not-italic font-light leading-6 font-opensans">Initial airdrop received </div>
 
                 </div>
                 <div className="py-6 px-10 rounded-3xl bg-[#0000004d] flex flex-col gap-2 w-[50%]">
                     <div className="text-white text-[32px] not-italic font-normal leading-10 tracking-[1.28px] font-ignazio">{response.totalStaked} $PASG</div>
-                    <div className="bg-[#ffffff80] h-[0.25px] self-stretch"></div>
+                    <div className="bg-[#ffffff50] h-[0.25px] self-stretch"></div>
                     <div className="text-[#ffffff80] text-sm not-italic font-light leading-6 font-opensans whitespace-nowrap">Total minimum amount stake </div>
 
                 </div>

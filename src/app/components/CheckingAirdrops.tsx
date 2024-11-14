@@ -1,22 +1,29 @@
 import { useChain } from "@cosmos-kit/react";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface CheckAirDropComponentProps {
     toggleInput: () => void;
     showInput: boolean;
     isLoading: boolean;
     checkAirDropAPI: () => void;
-    setWalletAddress: (val:string) => void;
+    setWalletAddress: (val: string) => void;
 }
 
 const CHAIN_ID = "passage";
-const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading , setWalletAddress}: CheckAirDropComponentProps) => {
-    const { connect } = useChain(CHAIN_ID);
+const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading, setWalletAddress }: CheckAirDropComponentProps) => {
+    const { connect, disconnect, isWalletConnected, address: extensionWalletAddress } = useChain(CHAIN_ID);
     const inputRef = useRef<HTMLInputElement>(null);
     const [error, setError] = useState("");
     const [address, setAddress] = useState("");
     const [isEligibilityChecked, setIsEligibilityChecked] = useState(false);
+
+    useEffect(() => {
+        if (isWalletConnected && extensionWalletAddress) {
+            setAddress(extensionWalletAddress);
+            setWalletAddress(extensionWalletAddress);
+        }
+    }, [isWalletConnected, extensionWalletAddress]);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const val = event.target.value;
@@ -43,6 +50,18 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading ,
         }
     };
 
+    const handleConnectOrDisconnect = () => {
+        if (isEligibilityChecked) return;
+
+        if (isWalletConnected) {
+            disconnect();
+            setAddress("");
+            setWalletAddress("");
+        } else {
+            connect();
+        }
+    };
+
     return (
         <div className="space-y-10 w-full flex-1">
             <div>
@@ -55,7 +74,7 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading ,
                 </p>
             </div>
             <div>
-                <div className={`flex justify-between items-center w-full px-6 py-6 rounded-3xl bg-[#ffffff14]  ${showInput ? "border-[0.5px] border-white" : ""} 
+                <div className={`flex justify-between items-center w-full px-6 py-6 rounded-3xl bg-[#ffffff14] ${showInput ? "border-[0.5px] border-white" : ""} 
                 ${error.length > 0 ? "border-[0.5px] border-solid border-[#E04240] bg-[#e0424014]" : ""}`}>
 
                     <input
@@ -63,16 +82,16 @@ const CheckingAirdrops = ({ toggleInput, showInput, checkAirDropAPI, isLoading ,
                         autoFocus
                         className="bg-transparent text-white border-none outline-none placeholder-white/50 text-lg w-[50%]"
                         placeholder="Enter address"
+                        value={address}
                         onChange={handleInputChange}
-                        
                     />
 
                     <div className="flex gap-6 items-center">
                         <div
                             className={`connect-wallet-btn cursor-pointer ${isEligibilityChecked ? "cursor-not-allowed opacity-50" : ""}`}
-                            onClick={() => !isEligibilityChecked && connect()}
+                            onClick={handleConnectOrDisconnect}
                         >
-                            Connect wallet
+                            {isWalletConnected ? "Disconnect wallet" : "Connect wallet"}
                         </div>
 
                         <button
